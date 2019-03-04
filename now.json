@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "name": "trailing-slash-bug",
+    "builds": [
+        {
+            "src": "package.json",
+            "use": "@now/next"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/([^\\.]*[^/])$",
+            "status": 301,
+            "headers": {
+                "Location": "/$1/"
+            }
+        }
+    ]
+}
